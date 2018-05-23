@@ -5,8 +5,10 @@
 	<?define ProductVersion = "{{AppVersion}}"?>
 	<?define UpgradeCode = "{{UpgradeCode}}"?>
 	
+    <!-- Id="{{ProductCode}}" -->
+    <!-- https://stackoverflow.com/questions/26734030/is-it-necessary-to-use-unique-wix-product-id-for-all-product-versions-if-upgrade  YES -->
 	<Product
-		Id="{{ProductCode}}"
+		Id="*"
 		Codepage="1252"
 		Language="1033"
 		Manufacturer="{{Publisher}}"
@@ -16,7 +18,7 @@
 		>
 		
 		<Package 
-			Comments="Installer originally by Cyrille Fauvel, Autodesk" 
+			Comments="Installer originally by Cyrille Fauvel, Autodesk. Broken by CAD bloke" 
 			Description="{{AppDescription}}" 
 			InstallPrivileges="elevated" 
 			InstallerVersion="405" 
