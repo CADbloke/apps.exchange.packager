@@ -44,6 +44,10 @@
 		<!-- Condition Message='{{AppDescription}} requires that Autodesk Maya {{VERSION}} be installed on your system prior to installation'>
 			MAYA_INSTALL_LOCATION
 		</Condition -->
+        
+        <Condition Message="This application requires .NET Framework 4.6. Please install the .NET 4.6 or later Framework then run this installer again.">
+      <![CDATA[Installed OR WIX_IS_NETFRAMEWORK_46_OR_LATER_INSTALLED]]>
+      </Condition>
 		
 		<CustomAction Id="LaunchDocHTML" BinaryKey="ShellExecute.exe" ExeCommand="[DOCUMENTATIONURL]" />
 		<CustomAction Id="LaunchEulaHTML" BinaryKey="ShellExecute.exe" ExeCommand="[EULAURL]" />
