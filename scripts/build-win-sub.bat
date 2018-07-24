@@ -5,7 +5,7 @@ if ERRORLEVEL 1 (
 	echo "Wix/Candle error - Build aborted!"
 	goto end
 ) else (
-	%DEVBIN%\bin\light.exe -sw1076 .\temp\plugin.wixobj -out ".\output\%AppName%-win64.msi"
+	%DEVBIN%\bin\light.exe -sw1076 -ext WixNetFxExtension .\temp\plugin.wixobj -out ".\output\%AppName%-win64.msi"
 	if ERRORLEVEL 1 (
 		echo "Wix/Light error - Build aborted!"
 		goto end
@@ -13,3 +13,5 @@ if ERRORLEVEL 1 (
 )
 
 :end
+
+::   need the WixNetFxExtension  for .NET framework versions    https://stackoverflow.com/questions/27428528/unresolved-reference-to-symbol-propertynetframework45-in-section-product/27946359#27946359

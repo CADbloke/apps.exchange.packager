@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
 
 	<?define RTMProductVersion = "0.0.1"?> <!-- The first one - edit with caution -->
 	<?define ProductVersion = "{{AppVersion}}"?>
@@ -45,16 +45,13 @@
 			MAYA_INSTALL_LOCATION
 		</Condition -->
         
+        <!-- https://stackoverflow.com/questions/27428528/unresolved-reference-to-symbol-propertynetframework45-in-section-product/27946359#27946359 -->
+        <!-- http://wixtoolset.org/documentation/manual/v3/howtos/redistributables_and_install_checks/check_for_dotnet.html -->
         <!-- https://stackoverflow.com/questions/37401019/how-can-i-detect-whether-net-framework-4-6-1-or-higher-is-installed-in-wix/37401225#37401225 -->
         <PropertyRef Id="WIX_IS_NETFRAMEWORK_46_OR_LATER_INSTALLED" />
         <Condition Message="This application requires .NET Framework 4.6. Please install the .NET 4.6 or later Framework then run this installer again.">
       <![CDATA[Installed OR WIX_IS_NETFRAMEWORK_46_OR_LATER_INSTALLED]]>
       </Condition>
-		
-        <!-- <PropertyRef Id="NETFRAMEWORK45"/> -->
-        <!-- <Condition Message="This application requires .NET Framework 4.6.1. Please install the .NET Framework then run this installer again."> -->
-        <!-- <![CDATA[Installed OR (NETFRAMEWORK45 >= "#393295")]]> -->
-        <!-- </Condition> -->
         
         
 		<CustomAction Id="LaunchDocHTML" BinaryKey="ShellExecute.exe" ExeCommand="[DOCUMENTATIONURL]" />
