@@ -415,7 +415,7 @@ def parsePackageContentsXml():
 	configXml ['PublisherPhone'] =str (elt.getAttribute ('Phone'))
 	configXml ['PublisherEmail'] =str (elt.getAttribute ('Email'))
 	configXml ['PublisherURL'] =str (elt.getAttribute ('Url'))
-	configXml ['HelpURL'] =str (elt.getAttribute ('Url')).replace('www','https://help')
+	configXml ['HelpURL'] =str (elt.getAttribute ('Url')) + '/help'
 
 	elt =doc.getElementsByTagName ('RuntimeRequirements') [0]
 	configXml ['OS'] =str (elt.getAttribute ('OS'))
