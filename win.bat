@@ -2,7 +2,7 @@
 
 set rootAppDir=.\Apps\
 set Template=winPerMachineIcon
-set Version=2016
+set Version=2013
 
 rem If you ever wanted to add MSM do your MSI automatically, uncomment the line below and add them here
 rem Use the ; (semi-column) as separator
@@ -33,6 +33,12 @@ if not "%1" == "" (
 )
 
 set PackageSrc=%rootAppDir%%AppName%
+
+echo.
+echo 	 project root folder: %rootAppDir%
+echo 	 Template:            %Template%
+echo 	 Product version string: %Version%
+echo.
 
 call scripts\build-win.bat
 goto:eof

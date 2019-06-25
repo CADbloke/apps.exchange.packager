@@ -177,7 +177,7 @@ def createWindowsInstaller ():
 
 	moduleDir =('%s/%s' % (cmdLineArgs ['source'], 'Contents'))
 	if os.path.isfile (cmdLineArgs ['template'] + '/manifest.manifest') and not os.path.isfile (moduleDir + '/' + cmdLineArgs ['bundleNoExt'] + '.manifest'):
-		print "Note: Creating manifest file in your source folder\n"
+		print ("Note: Creating manifest file in your source folder\n")
 		RenderFile (cmdLineArgs ['template'] + '/manifest.manifest', moduleDir + '/' + cmdLineArgs ['bundleNoExt'] + '.manifest', False)
     
 	msms =os.getenv ('MergeMSM', '').split (';')
